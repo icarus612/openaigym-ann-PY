@@ -9,8 +9,8 @@ packages = [
 ]
 
 [tool.poetry.dependencies]
-python = "^3.11"
-abc_ann = { path = "../abstract-base-classes" }
+python = "^3.11.0"
+abc-ann-py = { path = "../abstract-base-classes"}
 
 [build-system]
 requires = ["poetry-core"]
