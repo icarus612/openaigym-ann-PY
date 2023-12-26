@@ -1,10 +1,11 @@
+from abc_ann_py import ANN
 import numpy as np
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense
 from tensorflow.keras.optimizers import Adam
 from env_builder import EnvBuilder
 
-class LunarLanderV2:
+class LunarLanderV2(ANN):
 	def __init__(self):
 		self.env = EnvBuilder("LunarLander-v2")
 		self.Q = {}
