@@ -4,10 +4,13 @@ version = "0.1.0"
 description = ""
 authors = ["icarus64 <ellishogan95@gmail.com>"]
 readme = "README.md"
+packages = [
+	{include = "classes/*.py"},
+]
 
 [tool.poetry.dependencies]
 python = "^3.11"
-
+abc_ann = { path = "../abstract-base-classes" }
 
 [build-system]
 requires = ["poetry-core"]
