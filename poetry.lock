@@ -5,7 +5,7 @@ name = "abc-ann-py"
 version = "0.1.0"
 description = ""
 optional = false
-python-versions = "^3.7"
+python-versions = "^3.8"
 files = []
 develop = false
 
@@ -13,7 +13,20 @@ develop = false
 type = "directory"
 url = "../abstract-base-classes"
 
+[[package]]
+name = "p-demo"
+version = "0.1.0"
+description = ""
+optional = false
+python-versions = "^3.8"
+files = []
+develop = false
+
+[package.source]
+type = "directory"
+url = "../p-demo"
+
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11.0"
-content-hash = "28433585f2ba04f448f978cc2725c173f089d12ffe0961213ee3601c9a01604d"
+content-hash = "153ccfa7456a16b1f241ac8355cd3b789fd249871710791721335b9688ed2e4f"
