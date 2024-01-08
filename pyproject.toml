@@ -10,5 +10,6 @@ authors = ["icarus64 <ellishogan95@gmail.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.8.0"
+python = ">=3.11"
 abstract_base_classes = { path = "../abstract-base-classes"}
+numpy = "^1.26.3"
