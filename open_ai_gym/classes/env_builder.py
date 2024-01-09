@@ -1,8 +1,13 @@
 import gymnasium as gym
 import time
 import sys
-class EnvBuilder:
+
+from abstract_base_classes.ann_shell import ANN_Shell
+
+
+class EnvBuilder(ANN_Shell):
   def __init__(self, env, render_mode="human", seed=False):
+    super().__init__()
     self.env = gym.make(env, render_mode=render_mode)
     self.seed = seed
   

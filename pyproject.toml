@@ -10,6 +10,8 @@ authors = ["icarus64 <ellishogan95@gmail.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = ">=3.11"
-abstract_base_classes = { path = "../abstract-base-classes"}
+abstract_base_classes = {path = "../abstract-base-classes"}
+python = "3.11"
+tensorflow = "^2.6.0"
 numpy = "^1.26.3"
+gymnasium = {version = "^0.29.1", extras = ["box2d", "atari", "mujoco"]}
