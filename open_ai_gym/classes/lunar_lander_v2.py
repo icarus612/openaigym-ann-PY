@@ -41,10 +41,7 @@ class LunarLanderV2(EnvBuilder):
 			return max(self.Q.get(self.obs, {0: 0, 1: 0}), key=self.Q.get(self.obs, {0: 0, 1: 0}).get)
 			
 		else:
-			return self.env.envaction_space.sample()
-
-	def cycle (self, cycles=5):
-		self.env.cycle(self.action, cycles)
+			return self.env.action_space.sample()
 	
 if __name__ == "__main__":
 	llv2 = LunarLanderV2()
