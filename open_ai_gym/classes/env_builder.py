@@ -9,6 +9,7 @@ class EnvBuilder(ANN_Shell):
 		super().__init__()
 		self.env = gym.make(env, render_mode=render_mode)
 		self.seed = seed
+		self.sample_action = self.env.action_space.sample
 	
 	def load_env(self):
 		current_seed = self.seed
@@ -29,7 +30,9 @@ class EnvBuilder(ANN_Shell):
 				print(info)
 	
 	def test(self):
-		self.attempt(lambda *args: self.env.action_space.sample())
+		test_action = lambda *args: self.sample_action()
+		self.load_env()
+		self.attempt(test_action)
 		
 	def cycle(self, cycles=5):
 		for _ in range(cycles):
@@ -39,7 +42,6 @@ class EnvBuilder(ANN_Shell):
 		self.env.close()
 		
 	def action(self, *args):
-		print(*args)
 		pass
 	
 if __name__ == "__main__":

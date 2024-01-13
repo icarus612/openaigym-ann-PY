@@ -7,7 +7,6 @@ from env_builder import EnvBuilder
 class LunarLanderV2(EnvBuilder):
 	def __init__(self):
 		super().__init__("LunarLander-v2")
-		self.Q = {}
 		self.alpha = 0.1
 		self.gamma = 0.9
 		self.epsilon = 0.1
@@ -38,10 +37,12 @@ class LunarLanderV2(EnvBuilder):
 		
 	def action(self, observation, reward):
 		if np.random.random() > self.epsilon:
-			return max(self.Q.get(self.obs, {0: 0, 1: 0}), key=self.Q.get(self.obs, {0: 0, 1: 0}).get)
-			
+			reshap_obs = np.array(observation).reshape(1, -1)
+			q_values = self.model.predict(reshap_obs)
+			print(observation, q_values, reshap_obs, reward)
+			return np.argmax(q_values[0])
 		else:
-			return self.env.action_space.sample()
+			return self.sample_action()
 	
 if __name__ == "__main__":
 	llv2 = LunarLanderV2()
